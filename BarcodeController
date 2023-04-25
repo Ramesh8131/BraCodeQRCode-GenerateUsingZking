@@ -74,9 +74,14 @@ public class BarCodeController {
 			        BufferedImage.TYPE_BYTE_GRAY);
 			    Graphics2D g2 = newImage.createGraphics();
 			    Color oldColor = g2.getColor();
-			    g2.setPaint(Color.BLACK);
+			   // g2.setPaint(Color.BLACK);
+			    //g2.fillRect(0, 0, perRow*width, rowSize*height);
+			    //g2.setColor(oldColor);
+			     g2.setPaint(Color.BLACK);
 			    g2.fillRect(0, 0, perRow*width, rowSize*height);
-			    g2.setColor(oldColor);
+			    g2.setColor(Color.BLACK);
+			    g2.setBackground(Color.WHITE);
+			    
 			int i=0;
 			int j=0;
 			int barcodeGap=25;
