@@ -66,7 +66,8 @@ public class BarCodeController {
 
 	public void getBarCodeImage(List<String> ls, int width, int height,int perRow) {
 		try {
-			int rowSize=ls.size();
+			int rowSize=ls.size()==1?2:ls.size();
+			
 			Hashtable<EncodeHintType, ErrorCorrectionLevel> hintMap = new Hashtable<EncodeHintType, ErrorCorrectionLevel>();
 			hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
 			BufferedImage newImage = new BufferedImage(perRow*width, rowSize*height,
